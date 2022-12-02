@@ -77,7 +77,8 @@ public class RestApiController {
             return new ResponseEntity<>(new ExceptionMessage(error), HttpStatus.BAD_REQUEST);
         }
         try {
-                userService.update(id,user);
+
+                userService.update(user);
             return new ResponseEntity<>(HttpStatus.OK);
         }catch (UserUsernameExistException u) {
             throw new UserUsernameExistException("User with username exist");
